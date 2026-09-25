@@ -21,7 +21,6 @@
       --soft: #f5fbfb;
 
       --result-soft: #edf7f7;
-      --warning-soft: #fff7e8;
     }
 
     * {
@@ -32,7 +31,7 @@
       margin: 0;
       background: #ffffff;
       color: var(--text);
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .client-test {
@@ -42,6 +41,7 @@
       padding: 0 26px 30px;
     }
 
+    /* Заголовок */
     .test-title {
       margin: 0 0 10px;
       font-family: Arial, Helvetica, sans-serif;
@@ -51,10 +51,16 @@
       color: var(--teal);
     }
 
+    /* Текст под заголовком:
+       тот же шрифт, что в вопросах,
+       размер уменьшен на 20% */
     .test-lead {
       margin: 0 0 28px;
-      font-size: 18px;
-      line-height: 1.42;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14.4px;
+      line-height: 1.45;
+      font-weight: 400;
+      color: var(--text);
     }
 
     .type-block {
@@ -79,7 +85,6 @@
 
       width: 32px;
       height: 32px;
-
       flex: 0 0 32px;
 
       border-radius: 50%;
@@ -102,8 +107,12 @@
 
     .type-description {
       margin: 0 0 18px;
-      font-size: 15px;
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
       line-height: 1.4;
+      font-weight: 400;
+
       color: var(--muted);
     }
 
@@ -124,7 +133,6 @@
       border-radius: 11px;
 
       cursor: pointer;
-
       transition: 0.15s ease;
     }
 
@@ -153,14 +161,19 @@
       font-family: Arial, Helvetica, sans-serif;
       font-size: 15px;
       line-height: 1.3;
+      font-weight: 700;
 
       color: var(--teal-dark);
     }
 
     .check-text span {
       display: block;
+
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 14px;
-      line-height: 1.35;
+      line-height: 1.4;
+      font-weight: 400;
+
       color: var(--muted);
     }
 
@@ -180,6 +193,7 @@
       font-family: Arial, Helvetica, sans-serif;
       font-size: 23px;
       line-height: 1.2;
+
       color: var(--orange);
     }
 
@@ -217,6 +231,7 @@
       font-family: Arial, Helvetica, sans-serif;
       font-size: 14px;
       line-height: 1.25;
+
       color: var(--teal);
     }
 
@@ -233,8 +248,11 @@
     .score-card small {
       display: block;
       margin-top: 3px;
-      color: var(--muted);
+
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
+
+      color: var(--muted);
     }
 
     .advice {
@@ -247,11 +265,14 @@
       margin-bottom: 5px;
 
       font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+
       color: var(--teal);
     }
 
     .advice span {
-      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
       line-height: 1.45;
     }
 
@@ -259,7 +280,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-
       margin-top: 22px;
     }
 
@@ -300,8 +320,10 @@
 
       background: var(--teal-light);
 
-      font-size: 13px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
       line-height: 1.4;
+
       color: #365d5f;
     }
 
@@ -345,614 +367,790 @@
 
 <body>
 
-  <main class="client-test">
+<main class="client-test">
 
-    <h1 class="test-title">
-      Какой опасный клиент перед вами
-    </h1>
+  <h1 class="test-title">
+    Какой опасный клиент перед вами
+  </h1>
 
-    <p class="test-lead">
-      Отметьте признаки, которые узнаете в своем покупателе.
-      Чек-лист покажет, к какому из трех риск-профилей он ближе
-      и что проверить до следующей отгрузки.
+  <p class="test-lead">
+    Отметьте признаки, которые выявили у покупателя.
+    Чек-лист покажет, к какому из трех риск-профилей он ближе
+    и что проверить до следующей отгрузки
+  </p>
+
+
+  <!-- ТИП 1 -->
+
+  <section class="type-block">
+
+    <div class="type-head">
+
+      <div class="type-number">
+        1
+      </div>
+
+      <h2 class="type-name">
+        Клиент живет за счет вашей отсрочки
+      </h2>
+
+    </div>
+
+    <p class="type-description">
+      Он использует вас как источник оборотного финансирования:
+      частично гасит старый долг и сразу просит новую отгрузку
+    </p>
+
+    <div class="checks">
+
+      <label class="check-item">
+
+        <input
+          type="checkbox"
+          data-type="1"
+        >
+
+        <div class="check-text">
+
+          <strong>
+            Срок оплаты постоянно увеличивается
+          </strong>
+
+          <span>
+            Было 30 дней, затем 45–60, теперь клиент платит еще позже
+          </span>
+
+        </div>
+
+      </label>
+
+
+      <label class="check-item">
+
+        <input
+          type="checkbox"
+          data-type="1"
+        >
+
+        <div class="check-text">
+
+          <strong>
+            Клиент гасит только часть долга
+          </strong>
+
+          <span>
+            После платежа сразу просит возобновить поставки
+          </span>
+
+        </div>
+
+      </label>
+
+
+      <label class="check-item">
+
+        <input
+          type="checkbox"
+          data-type="1"
+        >
+
+        <div class="check-text">
+
+          <strong>
+            Платит после угрозы остановить отгрузки
+          </strong>
+
+          <span>
+            Без жесткого напоминания платежи регулярно переносятся
+          </span>
+
+        </div>
+
+      </label>
+
+
+      <label class="check-item">
+
+        <input
+          type="checkbox"
+          data-type="1"
+        >
+
+        <div class="check-text">
+
+          <strong>
+            Задолженность почти всегда держится у кредитного лимита
+          </strong>
+
+          <span>
+            Клиент быстро выбирает доступную отсрочку после каждого платежа
+          </span>
+
+        </div>
+
+      </label>
+
+    </div>
+
+  </section>
+
+
+  <!-- ТИП 2 -->
+
+  <section class="type-block">
+
+    <div class="type-head">
+
+      <div class="type-number">
+        2
+      </div>
+
+      <h2 class="type-name">
+        Клиент использует зависимость вашей компании
+      </h2>
+
+    </div>
+
+    <p class="type-description">
+      Он дает значительный объем продаж и понимает, что вам
+      сложно ужесточить условия или отказаться от сотрудничества
+    </p>
+
+    <div class="checks">
+
+      <label class="check-item">
+
+        <input
+          type="checkbox"
+          data-type="2"
+        >
+
+        <div class="check-text">
+
+          <strong>
+            Доля клиента в дебиторке выше его доли в выручке
+          </strong>
+
+          <span>
+            Клиент накапливает долг быстрее, чем формирует продажи
+          </span>
+
+        </div>
+
+      </label>
+
+
+      <label class="check-item">
+
+        <input
+          type="checkbox"
+          data-type="2"
+        >
+
+        <div class="check-text">
+
+          <strong>
+            Компания продолжает отгрузки несмотря на просрочку
+          </strong>
+
+          <span>
+            Продажи боятся потерять клиента или объем выручки
+          </span>
+
+        </div>
+
+      </label>
+
+
+      <label class="check-item">
+
+        <input
+          type="checkbox"
+          data-type="2"
+        >
+
+        <div class="check-text">
+
+          <strong>
+            Клиент регулярно требует увеличить отсрочку
+          </strong>
+
+          <span>
+            Вы финансируете его все дольше без сопоставимой выгоды
+          </span>
+
+        </div>
+
+      </label>
+
+
+      <label class="check-item">
+
+        <input
+          type="checkbox"
+          data-type="2"
+        >
+
+        <div class="check-text">
+
+          <strong>
+            В договоре у поставщика больше ответственности
+          </strong>
+
+          <span>
+            Штрафы за ваши нарушения существенные, а ответственность
+            клиента за просрочку минимальна или отсутствует
+          </span>
+
+        </div>
+
+      </label>
+
+    </div>
+
+  </section>
+
+
+  <!-- ТИП 3 -->
+
+  <section class="type-block">
+
+    <div class="type-head">
+
+      <div class="type-number">
+        3
+      </div>
+
+      <h2 class="type-name">
+        Клиент выискивает нарушения
+      </h2>
+
+    </div>
+
+    <p class="type-description">
+      Он систематически фиксирует нарушения и использует их,
+      чтобы уменьшать платежи, требовать скидки или компенсации
+    </p>
+
+    <div class="checks">
+
+      <label class="check-item">
+
+        <input
+          type="checkbox"
+          data-type="3"
+        >
+
+        <div class="check-text">
+
+          <strong>
+            Клиент регулярно уменьшает платеж
+          </strong>
+
+          <span>
+            Причина — претензии, удержания, штрафы, возвраты или компенсации
+          </span>
+
+        </div>
+
+      </label>
+
+
+      <label class="check-item">
+
+        <input
+          type="checkbox"
+          data-type="3"
+        >
+
+        <div class="check-text">
+
+          <strong>
+            Количество претензий растет быстрее объема продаж
+          </strong>
+
+          <span>
+            Спорные ситуации возникают регулярно
+          </span>
+
+        </div>
+
+      </label>
+
+
+      <label class="check-item">
+
+        <input
+          type="checkbox"
+          data-type="3"
+        >
+
+        <div class="check-text">
+
+          <strong>
+            Клиент фиксирует даже мелкие отклонения в актах
+          </strong>
+
+          <span>
+            Документы накапливаются и позже используются для составления претензий
+          </span>
+
+        </div>
+
+      </label>
+
+
+      <label class="check-item">
+
+        <input
+          type="checkbox"
+          data-type="3"
+        >
+
+        <div class="check-text">
+
+          <strong>
+            В договоре есть неоднозначные показатели качества или сроков
+          </strong>
+
+          <span>
+            Их можно трактовать по-разному при приемке или предъявлении претензий
+          </span>
+
+        </div>
+
+      </label>
+
+    </div>
+
+  </section>
+
+
+  <!-- РЕЗУЛЬТАТ -->
+
+  <section
+    class="result-block"
+    id="resultBlock"
+    aria-live="polite"
+  >
+
+    <h2 class="result-title">
+      Результат
+    </h2>
+
+    <p
+      class="result-main"
+      id="resultMain"
+    >
+      Отметьте признаки — и мы покажем, к какому типу ближе клиент
     </p>
 
 
-    <!-- ТИП 1 -->
+    <div class="score-grid">
 
-    <section class="type-block">
-
-      <div class="type-head">
-        <div class="type-number">1</div>
-
-        <h2 class="type-name">
-          Клиент живет за счет вашей отсрочки
-        </h2>
-      </div>
-
-      <p class="type-description">
-        Он использует поставщика как источник оборотного финансирования:
-        частично гасит старый долг и сразу просит новую отгрузку.
-      </p>
-
-      <div class="checks">
-
-        <label class="check-item">
-          <input type="checkbox" data-type="1">
-
-          <div class="check-text">
-            <strong>Срок оплаты постоянно увеличивается</strong>
-
-            <span>
-              Было 30 дней, затем 45–60, теперь клиент платит еще позже.
-            </span>
-          </div>
-        </label>
-
-        <label class="check-item">
-          <input type="checkbox" data-type="1">
-
-          <div class="check-text">
-            <strong>Клиент гасит только часть долга</strong>
-
-            <span>
-              После платежа сразу просит возобновить поставки.
-            </span>
-          </div>
-        </label>
-
-        <label class="check-item">
-          <input type="checkbox" data-type="1">
-
-          <div class="check-text">
-            <strong>Платит после угрозы остановить отгрузки</strong>
-
-            <span>
-              Без жесткого напоминания платежи регулярно переносятся.
-            </span>
-          </div>
-        </label>
-
-        <label class="check-item">
-          <input type="checkbox" data-type="1">
-
-          <div class="check-text">
-            <strong>Задолженность почти всегда держится у кредитного лимита</strong>
-
-            <span>
-              Клиент быстро выбирает доступную отсрочку после каждого платежа.
-            </span>
-          </div>
-        </label>
-
-      </div>
-    </section>
-
-
-    <!-- ТИП 2 -->
-
-    <section class="type-block">
-
-      <div class="type-head">
-        <div class="type-number">2</div>
-
-        <h2 class="type-name">
-          Клиент использует вашу зависимость
-        </h2>
-      </div>
-
-      <p class="type-description">
-        Он дает значительный объем продаж и понимает, что компании
-        сложно ужесточить условия или отказаться от сотрудничества.
-      </p>
-
-      <div class="checks">
-
-        <label class="check-item">
-          <input type="checkbox" data-type="2">
-
-          <div class="check-text">
-            <strong>Доля клиента в дебиторке выше его доли в выручке</strong>
-
-            <span>
-              Клиент накапливает долг быстрее, чем формирует продажи.
-            </span>
-          </div>
-        </label>
-
-        <label class="check-item">
-          <input type="checkbox" data-type="2">
-
-          <div class="check-text">
-            <strong>Компания продолжает отгрузки несмотря на просрочку</strong>
-
-            <span>
-              Продажи боятся потерять клиента или объем выручки.
-            </span>
-          </div>
-        </label>
-
-        <label class="check-item">
-          <input type="checkbox" data-type="2">
-
-          <div class="check-text">
-            <strong>Клиент регулярно требует увеличить отсрочку</strong>
-
-            <span>
-              Компания финансирует его все дольше без сопоставимой выгоды.
-            </span>
-          </div>
-        </label>
-
-        <label class="check-item">
-          <input type="checkbox" data-type="2">
-
-          <div class="check-text">
-            <strong>В договоре у поставщика больше ответственности</strong>
-
-            <span>
-              Штрафы за ваши нарушения существенные, а ответственность клиента
-              за просрочку минимальна или отсутствует.
-            </span>
-          </div>
-        </label>
-
-      </div>
-    </section>
-
-
-    <!-- ТИП 3 -->
-
-    <section class="type-block">
-
-      <div class="type-head">
-        <div class="type-number">3</div>
-
-        <h2 class="type-name">
-          Клиент превращает отклонения в претензии
-        </h2>
-      </div>
-
-      <p class="type-description">
-        Он систематически фиксирует нарушения и использует их,
-        чтобы уменьшать платежи, требовать скидки или компенсации.
-      </p>
-
-      <div class="checks">
-
-        <label class="check-item">
-          <input type="checkbox" data-type="3">
-
-          <div class="check-text">
-            <strong>Клиент регулярно уменьшает платеж</strong>
-
-            <span>
-              Причина — претензии, удержания, штрафы, возвраты или компенсации.
-            </span>
-          </div>
-        </label>
-
-        <label class="check-item">
-          <input type="checkbox" data-type="3">
-
-          <div class="check-text">
-            <strong>Количество претензий растет быстрее объема продаж</strong>
-
-            <span>
-              Спорные ситуации становятся постоянной частью сотрудничества.
-            </span>
-          </div>
-        </label>
-
-        <label class="check-item">
-          <input type="checkbox" data-type="3">
-
-          <div class="check-text">
-            <strong>Клиент фиксирует даже мелкие отклонения в актах</strong>
-
-            <span>
-              Документы накапливаются и позже используются при расчетах.
-            </span>
-          </div>
-        </label>
-
-        <label class="check-item">
-          <input type="checkbox" data-type="3">
-
-          <div class="check-text">
-            <strong>В договоре есть неоднозначные показатели качества или сроков</strong>
-
-            <span>
-              Их можно трактовать по-разному при приемке или предъявлении претензий.
-            </span>
-          </div>
-        </label>
-
-      </div>
-    </section>
-
-
-    <!-- РЕЗУЛЬТАТ -->
-
-    <section class="result-block" id="resultBlock" aria-live="polite">
-
-      <h2 class="result-title">
-        Результат
-      </h2>
-
-      <p class="result-main" id="resultMain">
-        Отметьте признаки — и мы покажем, к какому типу ближе клиент.
-      </p>
-
-
-      <div class="score-grid">
-
-        <div class="score-card">
-          <strong>
-            Тип 1. Живет за счет отсрочки
-          </strong>
-
-          <span id="score1">
-            0 из 4
-          </span>
-
-          <small id="label1">
-            Явных сигналов нет
-          </small>
-        </div>
-
-
-        <div class="score-card">
-          <strong>
-            Тип 2. Использует зависимость
-          </strong>
-
-          <span id="score2">
-            0 из 4
-          </span>
-
-          <small id="label2">
-            Явных сигналов нет
-          </small>
-        </div>
-
-
-        <div class="score-card">
-          <strong>
-            Тип 3. Претензии и удержания
-          </strong>
-
-          <span id="score3">
-            0 из 4
-          </span>
-
-          <small id="label3">
-            Явных сигналов нет
-          </small>
-        </div>
-
-      </div>
-
-
-      <div class="advice">
+      <div class="score-card">
 
         <strong>
-          Что проверить
+          Тип 1. Живет за счет отсрочки
         </strong>
 
-        <span id="adviceText">
-          После выбора признаков здесь появится рекомендация.
+        <span id="score1">
+          0 из 4
         </span>
+
+        <small id="label1">
+          Явных сигналов нет
+        </small>
 
       </div>
 
-    </section>
+
+      <div class="score-card">
+
+        <strong>
+          Тип 2. Использует зависимость
+        </strong>
+
+        <span id="score2">
+          0 из 4
+        </span>
+
+        <small id="label2">
+          Явных сигналов нет
+        </small>
+
+      </div>
 
 
-    <div class="buttons">
+      <div class="score-card">
 
-      <button
-        type="button"
-        class="btn-print"
-        id="printButton"
-      >
-        Распечатать чек-лист
-      </button>
+        <strong>
+          Тип 3. Претензии и удержания
+        </strong>
 
-      <button
-        type="button"
-        class="btn-download"
-        id="downloadButton"
-      >
-        Скачать чек-лист
-      </button>
+        <span id="score3">
+          0 из 4
+        </span>
 
-      <button
-        type="button"
-        class="btn-reset"
-        id="resetButton"
-      >
-        Сбросить
-      </button>
+        <small id="label3">
+          Явных сигналов нет
+        </small>
+
+      </div>
 
     </div>
 
 
-    <p class="note">
-      Результат не доказывает неплатежеспособность или недобросовестность клиента.
-      Чек-лист помогает быстро определить, какую зону риска стоит проверить глубже.
-    </p>
+    <div class="advice">
 
-  </main>
+      <strong>
+        Что проверить
+      </strong>
+
+      <span id="adviceText">
+        После выбора признаков здесь появится рекомендация
+      </span>
+
+    </div>
+
+  </section>
 
 
-  <script>
-    (function () {
+  <div class="buttons">
 
-      const checkboxes =
-        Array.from(
-          document.querySelectorAll(
-            'input[type="checkbox"][data-type]'
-          )
+    <button
+      type="button"
+      class="btn-print"
+      id="printButton"
+    >
+      Распечатать чек-лист
+    </button>
+
+    <button
+      type="button"
+      class="btn-download"
+      id="downloadButton"
+    >
+      Скачать чек-лист
+    </button>
+
+    <button
+      type="button"
+      class="btn-reset"
+      id="resetButton"
+    >
+      Сбросить
+    </button>
+
+  </div>
+
+
+  <p class="note">
+    Результат не доказывает неплатежеспособность или недобросовестность клиента.
+    Чек-лист помогает быстро определить, какую зону риска стоит проверить глубже
+  </p>
+
+</main>
+
+
+<script>
+(function () {
+
+  const checkboxes =
+    Array.from(
+      document.querySelectorAll(
+        'input[type="checkbox"][data-type]'
+      )
+    );
+
+
+  const score1 =
+    document.getElementById('score1');
+
+  const score2 =
+    document.getElementById('score2');
+
+  const score3 =
+    document.getElementById('score3');
+
+
+  const label1 =
+    document.getElementById('label1');
+
+  const label2 =
+    document.getElementById('label2');
+
+  const label3 =
+    document.getElementById('label3');
+
+
+  const resultMain =
+    document.getElementById('resultMain');
+
+  const adviceText =
+    document.getElementById('adviceText');
+
+
+  const printButton =
+    document.getElementById('printButton');
+
+  const downloadButton =
+    document.getElementById('downloadButton');
+
+  const resetButton =
+    document.getElementById('resetButton');
+
+
+  function getScore(type) {
+
+    return checkboxes.filter(
+      function (checkbox) {
+
+        return (
+          checkbox.dataset.type === type &&
+          checkbox.checked
         );
 
-      const score1 =
-        document.getElementById('score1');
-
-      const score2 =
-        document.getElementById('score2');
-
-      const score3 =
-        document.getElementById('score3');
-
-      const label1 =
-        document.getElementById('label1');
-
-      const label2 =
-        document.getElementById('label2');
-
-      const label3 =
-        document.getElementById('label3');
-
-      const resultMain =
-        document.getElementById('resultMain');
-
-      const adviceText =
-        document.getElementById('adviceText');
-
-      const printButton =
-        document.getElementById('printButton');
-
-      const downloadButton =
-        document.getElementById('downloadButton');
-
-      const resetButton =
-        document.getElementById('resetButton');
-
-
-      function getScore(type) {
-
-        return checkboxes.filter(
-          function (checkbox) {
-
-            return (
-              checkbox.dataset.type === type &&
-              checkbox.checked
-            );
-
-          }
-        ).length;
       }
+    ).length;
+
+  }
 
 
-      function getLabel(score) {
+  function getLabel(score) {
 
-        if (score === 0) {
-          return 'Явных сигналов нет';
+    if (score === 0) {
+      return 'Явных сигналов нет';
+    }
+
+    if (score === 1) {
+      return 'Есть отдельный сигнал';
+    }
+
+    if (score === 2) {
+      return 'Стоит проверить';
+    }
+
+    return 'Выраженный профиль';
+
+  }
+
+
+  function updateCheckedStyles() {
+
+    checkboxes.forEach(
+      function (checkbox) {
+
+        const item =
+          checkbox.closest('.check-item');
+
+        if (checkbox.checked) {
+
+          item.classList.add('checked');
+
+        } else {
+
+          item.classList.remove('checked');
+
         }
 
-        if (score === 1) {
-          return 'Есть отдельный сигнал';
-        }
-
-        if (score === 2) {
-          return 'Стоит проверить';
-        }
-
-        return 'Выраженный профиль';
       }
+    );
+
+  }
 
 
-      function updateCheckedStyles() {
+  function updateResult() {
 
-        checkboxes.forEach(
-          function (checkbox) {
+    updateCheckedStyles();
 
-            const item =
-              checkbox.closest('.check-item');
 
-            if (checkbox.checked) {
-              item.classList.add('checked');
-            } else {
-              item.classList.remove('checked');
+    const s1 =
+      getScore('1');
+
+    const s2 =
+      getScore('2');
+
+    const s3 =
+      getScore('3');
+
+
+    const total =
+      s1 + s2 + s3;
+
+
+    score1.textContent =
+      s1 + ' из 4';
+
+    score2.textContent =
+      s2 + ' из 4';
+
+    score3.textContent =
+      s3 + ' из 4';
+
+
+    label1.textContent =
+      getLabel(s1);
+
+    label2.textContent =
+      getLabel(s2);
+
+    label3.textContent =
+      getLabel(s3);
+
+
+    if (total <= 1) {
+
+      resultMain.textContent =
+        'Явного риск-профиля пока нет.';
+
+      adviceText.textContent =
+        'Продолжайте следить за сроком оплаты, долей клиента в дебиторке и претензионной активностью.';
+
+      return;
+
+    }
+
+
+    const maxScore =
+      Math.max(
+        s1,
+        s2,
+        s3
+      );
+
+
+    const leaders = [];
+
+
+    if (s1 === maxScore) {
+      leaders.push(1);
+    }
+
+    if (s2 === maxScore) {
+      leaders.push(2);
+    }
+
+    if (s3 === maxScore) {
+      leaders.push(3);
+    }
+
+
+    if (leaders.length > 1) {
+
+      resultMain.textContent =
+        'У клиента смешанный профиль риска.';
+
+      adviceText.textContent =
+        'Проверьте сразу несколько зон: платежную дисциплину, зависимость компании от клиента и условия договора. Сочетание нескольких профилей требует более глубокой проверки до следующей крупной отгрузки.';
+
+      return;
+
+    }
+
+
+    if (leaders[0] === 1) {
+
+      resultMain.textContent =
+        'Больше всего признаков типа 1: клиент может финансировать оборот за счет вашей отсрочки.';
+
+      adviceText.textContent =
+        'Проверьте динамику срока оплаты, остаток кредитного лимита и главное — из какого источника клиент погасит текущий долг, если вы остановите новые отгрузки.';
+
+      return;
+
+    }
+
+
+    if (leaders[0] === 2) {
+
+      resultMain.textContent =
+        'Больше всего признаков типа 2: клиент может использовать зависимость компании от его объема.';
+
+      adviceText.textContent =
+        'Сопоставьте долю клиента в выручке, валовой прибыли и дебиторке. Отдельно посчитайте, сколько денег потребуется компании, если клиент задержит оплату еще на один расчетный цикл.';
+
+      return;
+
+    }
+
+
+    if (leaders[0] === 3) {
+
+      resultMain.textContent =
+        'Больше всего признаков типа 3: основной риск может быть связан с претензиями и удержаниями.';
+
+      adviceText.textContent =
+        'Посчитайте, сколько маржи уже ушло на скидки, штрафы, возвраты и компенсации. Затем проверьте спорные условия договора и порядок приемки.';
+
+    }
+
+  }
+
+
+  checkboxes.forEach(
+    function (checkbox) {
+
+      checkbox.addEventListener(
+        'change',
+        updateResult
+      );
+
+    }
+  );
+
+
+  printButton.addEventListener(
+    'click',
+    function () {
+
+      window.print();
+
+    }
+  );
+
+
+  downloadButton.addEventListener(
+    'click',
+    function () {
+
+      updateResult();
+
+
+      const checkedTexts =
+        checkboxes
+          .filter(
+            function (checkbox) {
+
+              return checkbox.checked;
+
             }
+          )
+          .map(
+            function (checkbox) {
 
-          }
-        );
-      }
+              return checkbox
+                .closest('.check-item')
+                .querySelector('strong')
+                .textContent
+                .trim();
 
-
-      function updateResult() {
-
-        updateCheckedStyles();
-
-        const s1 =
-          getScore('1');
-
-        const s2 =
-          getScore('2');
-
-        const s3 =
-          getScore('3');
-
-        const total =
-          s1 + s2 + s3;
-
-
-        score1.textContent =
-          s1 + ' из 4';
-
-        score2.textContent =
-          s2 + ' из 4';
-
-        score3.textContent =
-          s3 + ' из 4';
-
-
-        label1.textContent =
-          getLabel(s1);
-
-        label2.textContent =
-          getLabel(s2);
-
-        label3.textContent =
-          getLabel(s3);
-
-
-        if (total <= 1) {
-
-          resultMain.textContent =
-            'Явного риск-профиля пока нет.';
-
-          adviceText.textContent =
-            'Продолжайте следить за сроком оплаты, долей клиента в дебиторке и претензионной активностью.';
-
-          return;
-        }
-
-
-        const maxScore =
-          Math.max(s1, s2, s3);
-
-
-        const leaders = [];
-
-        if (s1 === maxScore) {
-          leaders.push(1);
-        }
-
-        if (s2 === maxScore) {
-          leaders.push(2);
-        }
-
-        if (s3 === maxScore) {
-          leaders.push(3);
-        }
-
-
-        if (leaders.length > 1) {
-
-          resultMain.textContent =
-            'У клиента смешанный профиль риска.';
-
-          adviceText.textContent =
-            'Проверьте сразу несколько зон: платежную дисциплину, зависимость компании от клиента и условия договора. Сочетание нескольких профилей требует более глубокой проверки до следующей крупной отгрузки.';
-
-          return;
-        }
-
-
-        if (leaders[0] === 1) {
-
-          resultMain.textContent =
-            'Больше всего признаков типа 1: клиент может финансировать оборот за счет вашей отсрочки.';
-
-          adviceText.textContent =
-            'Проверьте динамику срока оплаты, остаток кредитного лимита и главное — из какого источника клиент погасит текущий долг, если вы остановите новые отгрузки.';
-
-          return;
-        }
-
-
-        if (leaders[0] === 2) {
-
-          resultMain.textContent =
-            'Больше всего признаков типа 2: клиент может использовать зависимость компании от его объема.';
-
-          adviceText.textContent =
-            'Сопоставьте долю клиента в выручке, валовой прибыли и дебиторке. Отдельно посчитайте, сколько денег потребуется компании, если клиент задержит оплату еще на один расчетный цикл.';
-
-          return;
-        }
-
-
-        if (leaders[0] === 3) {
-
-          resultMain.textContent =
-            'Больше всего признаков типа 3: основной риск может быть связан с претензиями и удержаниями.';
-
-          adviceText.textContent =
-            'Посчитайте, сколько маржи уже ушло на скидки, штрафы, возвраты и компенсации. Затем проверьте спорные условия договора и порядок приемки.';
-
-        }
-
-      }
-
-
-      checkboxes.forEach(
-        function (checkbox) {
-
-          checkbox.addEventListener(
-            'change',
-            updateResult
+            }
           );
 
-        }
-      );
 
-
-      printButton.addEventListener(
-        'click',
-        function () {
-
-          window.print();
-
-        }
-      );
-
-
-      downloadButton.addEventListener(
-        'click',
-        function () {
-
-          updateResult();
-
-          const checkedTexts =
-            checkboxes
-              .filter(
-                function (checkbox) {
-                  return checkbox.checked;
-                }
-              )
-              .map(
-                function (checkbox) {
-
-                  return checkbox
-                    .closest('.check-item')
-                    .querySelector('strong')
-                    .textContent
-                    .trim();
-
-                }
-              );
-
-
-          const html = `
+      const html = `
 <!DOCTYPE html>
+
 <html lang="ru">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Какой опасный клиент перед вами</title>
+
+<title>
+Какой опасный клиент перед вами
+</title>
 
 <style>
 
@@ -960,7 +1158,9 @@ body {
   max-width: 757px;
   margin: 35px auto;
   padding: 0 24px;
-  font-family: Georgia, "Times New Roman", serif;
+
+  font-family: Arial, Helvetica, sans-serif;
+
   color: #111;
   line-height: 1.45;
 }
@@ -979,7 +1179,9 @@ h2 {
 .result {
   margin-top: 22px;
   padding: 18px;
+
   background: #edf7f7;
+
   border-left: 6px solid #2f7f82;
 }
 
@@ -990,38 +1192,56 @@ li {
 .note {
   margin-top: 22px;
   padding: 14px;
+
   background: #dceff1;
+
   color: #365d5f;
-  font-size: 13px;
+
+  font-size: 12px;
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <h1>
 Какой опасный клиент перед вами
 </h1>
 
+
 <h2>
 Отмеченные признаки
 </h2>
 
+
 ${
   checkedTexts.length
+
     ? '<ul>' +
+
       checkedTexts
         .map(
           function (text) {
-            return '<li>☒ ' + escapeHtml(text) + '</li>';
+
+            return (
+              '<li>☒ ' +
+              escapeHtml(text) +
+              '</li>'
+            );
+
           }
         )
         .join('') +
+
       '</ul>'
 
     : '<p>Признаки не отмечены.</p>'
 }
+
 
 <div class="result">
 
@@ -1029,100 +1249,135 @@ ${
 Результат
 </h2>
 
+
 <p>
+
 <strong>
 ${escapeHtml(resultMain.textContent)}
 </strong>
+
 </p>
+
 
 <p>
 ${escapeHtml(adviceText.textContent)}
 </p>
 
+
 </div>
 
+
 <p class="note">
-Чек-лист не доказывает неплатежеспособность или
-недобросовестность клиента. Он помогает определить,
+
+Чек-лист не доказывает неплатежеспособность
+или недобросовестность клиента.
+
+Он помогает определить,
 какую зону риска стоит проверить глубже.
+
 </p>
 
+
 </body>
+
 </html>
-          `;
+      `;
 
 
-          const blob =
-            new Blob(
-              [html],
-              {
-                type: 'text/html;charset=utf-8'
-              }
-            );
+      const blob =
+        new Blob(
+          [html],
+          {
+            type:
+              'text/html;charset=utf-8'
+          }
+        );
 
 
-          const url =
-            URL.createObjectURL(blob);
+      const url =
+        URL.createObjectURL(blob);
 
 
-          const link =
-            document.createElement('a');
+      const link =
+        document.createElement('a');
 
 
-          link.href =
-            url;
-
-          link.download =
-            'Чек-лист — три типа опасных клиентов.html';
+      link.href =
+        url;
 
 
-          document.body.appendChild(link);
-
-          link.click();
-
-          link.remove();
-
-          URL.revokeObjectURL(url);
-
-        }
-      );
+      link.download =
+        'Чек-лист — три типа опасных клиентов.html';
 
 
-      resetButton.addEventListener(
-        'click',
-        function () {
+      document.body.appendChild(link);
 
-          checkboxes.forEach(
-            function (checkbox) {
+      link.click();
 
-              checkbox.checked =
-                false;
+      link.remove();
 
-            }
-          );
+      URL.revokeObjectURL(url);
 
-          updateResult();
+    }
+  );
+
+
+  resetButton.addEventListener(
+    'click',
+    function () {
+
+      checkboxes.forEach(
+        function (checkbox) {
+
+          checkbox.checked =
+            false;
 
         }
       );
-
-
-      function escapeHtml(value) {
-
-        return String(value)
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#039;');
-
-      }
 
 
       updateResult();
 
-    })();
-  </script>
+    }
+  );
+
+
+  function escapeHtml(value) {
+
+    return String(value)
+
+      .replace(
+        /&/g,
+        '&amp;'
+      )
+
+      .replace(
+        /</g,
+        '&lt;'
+      )
+
+      .replace(
+        />/g,
+        '&gt;'
+      )
+
+      .replace(
+        /"/g,
+        '&quot;'
+      )
+
+      .replace(
+        /'/g,
+        '&#039;'
+      );
+
+  }
+
+
+  updateResult();
+
+})();
+</script>
 
 </body>
 </html>
